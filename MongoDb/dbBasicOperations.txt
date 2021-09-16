@@ -1,0 +1,12 @@
+>>mongosh
+>>show dbs
+>> use assignment
+>>db.createCollection('users')
+>>db.users.insert({"first_name": "Mandie","last_name": "Richings","email": "mrichings0@bizjournals.com","gender": "Genderfluid","ip_address": "81.213.231.151","age": 1})
+>>db.users.insertMany([{"first_name":"Jacquette","last_name":"Halsall","email":"jhalsall1@xrea.com","gender":"Male","ip_address":"210.95.66.179","age": 2},{"first_name": "Shayne","last_name": "Risebarer","email": "srisebarer2@de.vu","gender": "Agender","ip_address": "30.230.154.112","age": 3},{"first_name": "Janey","last_name": "Bothwell","email": "jbothwell3@dyndns.org","gender":"Genderfluid","ip_address":"236.74.33.29","age": 4},{"first_name": "Lauritz","last_name": "Seifert","email": "lseifert4@addthis.com","gender": "Bigender","ip_address": "93.80.77.137","age": 5},{"first_name": "Janetta","last_name": "Barrasse","email": "jbarrasse5@wordpress.org","gender": "Agender","ip_address": "146.115.147.104","age": 6},{"first_name": "Orren","last_name": "Bacon","email": "obacon6@hubpages.com","gender": "Polygender","ip_address": "42.71.209.7","age": 7},{"first_name": "Christalle","last_name": "Naerup","email": "cnaerup7@unblog.fr","gender": "Female","ip_address": "99.109.117.56","age": 8},{"first_name": "Dannie","last_name": "Hardaway","email": "dhardaway8@goo.ne.jp","gender": "Non-binary","ip_address": "172.61.153.244","age": 9},{"first_name": "Cull","last_name": "Symms","email": "csymms9@springer.com","gender": "Genderqueer","ip_address": "12.28.45.153","age": 10}])
+>>db.users.find({})
+>>db.users.find({_id: ObjectId("61434a5a443463b806c685c5")})
+>>db.users.update({_id: ObjectId("61434a5a443463b806c685c5")},{$set: {"last_name": "Shah"}})
+>>db.users.updateMany({first_name:"Danny"},{$set: {"last_Name":"Shah"}})
+>>db.users.remove({"first_Name": "Dannie"})
+>> db.dropDatabase()

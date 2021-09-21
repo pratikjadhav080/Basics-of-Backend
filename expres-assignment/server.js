@@ -8,7 +8,7 @@ app.use(express.json())
 
 let d;
 
-app.get("/", middleman({ api_requested_by: "required" }), (req, res) => {
+app.get("/",middleman({ api_requested_by: "required" }), (req, res) => {
 
     d.books = users
 
@@ -41,11 +41,10 @@ app.get("/books/:id", middleman({ api_requested_by: "required" }), (req, res) =>
 
 app.patch("/books/:id", middleman({ api_requested_by: "required" }), (req, res) => {
 
-    let id = req.params.id;
+    let id = req.params.id; 
 
     users.forEach((ele) => {
         if (ele.id == id) {
-            console.log(ele, req.body)
 
             Object.keys(req.body).forEach((e) => {
                 ele[e] = req.body[e]
@@ -89,7 +88,7 @@ function middleman(data) {
             }
         })
         if (errors.length) {
-            return res.send(errors);
+            res.send(errors);
         }
 
         d = { "api_requested_by": req.query.api_requested_by }

@@ -11,6 +11,8 @@ const studentController = require("./controller/studentController")
 const assingmentController = require("./controller/assingmentController")
 const submissionController = require("./controller/submissionController")
 
+app.set("view engine",ejs)
+
 app.use("/users",userController)
 app.use("/students",studentController)
 app.use("/assignments",assingmentController)

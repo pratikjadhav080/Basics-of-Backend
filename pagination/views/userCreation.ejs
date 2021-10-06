@@ -6,17 +6,25 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- Latest compiled and minified CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+   <!-- CSS only -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+   <!-- JavaScript Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
       crossorigin="anonymous"></script>
+
    <title>Document</title>
+   <style>
+      .widthchange{
+         width:50%;
+      }
+   </style>
 
 </head>
 
 <body>
-   <div class="container">
+   <!-- <div class="container">
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
@@ -39,8 +47,31 @@
             </div>
          </div>
       </div>
+   </div> -->
+   <div style="width:80%; margin:auto; margin-top:50px;">
+      <form onsubmit="signupUser(event)">
+         <div class="mb-3">
+            <label class="form-label" for="first_name">First Name</label>
+            <input type="text" class="form-control widthchange" id="first_name">
+         </div>
+         <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control widthchange" id="last_name">
+         </div>
+         <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control widthchange" id="email">
+         </div>
+   
+         <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
    </div>
+   
+
 </body>
+
+
+
 
 <script>
 
@@ -76,16 +107,16 @@
                body: json
             }
          ));
-         
+
          res = await res.json();
 
          console.log(res);
 
-         if(res){
+         if (res) {
 
             alert("You are registerd, please check your email")
 
-            window.location.href="http://localhost:2364/landingpage"
+            window.location.href = "http://localhost:2364/landingpage"
          }
       }
 

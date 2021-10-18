@@ -6,6 +6,8 @@ const Gallery = require("../models/galleryModel");
 const upload = require("../middlewares/fileupload");
 
 router.post("/", upload.array("pictures", 5), async (req, res) => {
+
+
     const file_Paths = req.files.map(file => file.path);
     const user = await Gallery.create({
         user_id: req.body.user_id,

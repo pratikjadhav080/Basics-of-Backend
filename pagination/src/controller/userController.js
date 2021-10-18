@@ -10,8 +10,6 @@ router.post("", async (req, res) => {
 
     const admin = await Admin.find().populate("user_id").lean().exec()
 
-    console.log(admin)
-
     sendmail({
         from: "sender@server.com",
         to: user.email,

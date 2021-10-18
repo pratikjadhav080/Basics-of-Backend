@@ -19,8 +19,10 @@ router.post("/",
         }
 
         return true;
+
     }),
     body("pincode").custom((value) => {
+
         if (!value) {
             throw new Error("PINCODE is required");
         }
@@ -29,8 +31,10 @@ router.post("/",
             throw new Error("PINCODE length has to be exactly 6 numbers");
         }
         return true;
+
     }),
     body("age").custom((value) => {
+
         if (!value) {
             throw new Error("AGE is required");
         }
@@ -39,8 +43,10 @@ router.post("/",
             throw new Error('AGE should be between 1 and 100.');
         }
         return true;
+
     }),
     body("gender").custom((value) => {
+
         if (!value) {
             throw new Error("GENDER is required");
         }
@@ -48,6 +54,7 @@ router.post("/",
             throw new Error('GENDER should be either Male, Female or Others');
         }
         return true;
+
     }),
     async (req, res) => {
 
@@ -69,3 +76,4 @@ router.post("/",
     })
 
 module.exports = router;
+
